@@ -9,7 +9,19 @@ class App extends Component {
   }
 
   componentDidMount() {
+    fetch('https://api.github.com/users/bgfranks')
+      .then(res => res.json())
+      .then(user => {
+        // console.log(user)
+        this.setState({ ...this.state, githubData: user })
+        // console.log(user.login)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
+
+
 
 
   render() {
