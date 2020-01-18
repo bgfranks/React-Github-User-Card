@@ -1,13 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 
-const UserForm = props => {
+const FormContainer = styled.div`
+  padding-bottom: 20px;
+  color: #f3f3f3;
+`;
+
+const UserForm = ({ value, handleUserTextChange, handleUserFetch }) => {
   return (
-    <div className="form">
+    <FormContainer>
       <form>
-        <input type="text" value={} onChange={} />
-        <button onClick={}>Search</button>
+        <input type="text" value={value} onChange={handleUserTextChange} />
+        <button onClick={handleUserFetch}>Search</button>
       </form>
-    </div>
+    </FormContainer>
   );
 };
 
